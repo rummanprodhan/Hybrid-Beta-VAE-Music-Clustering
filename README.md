@@ -21,24 +21,6 @@ By imposing a heavy KL-divergence penalty ($\beta=4.0$), the model successfully 
 * **State-of-the-Art Metrics:** Achieved **ARI=1.0** and **NMI=1.0** on language separation tasks.
 * **Benchmarked:** Validated audio encoders against the standard GTZAN genre dataset.
 
-## 📂 Repository Structure
-
-```text
-Hybrid-Beta-VAE-Music-Clustering/
-│
-├── data/                      # Dataset documentation
-│   ├── HBLM-100/              # Custom Dataset (Metadata included, Audio linked)
-│   └── GTZAN/                 # Benchmark Dataset (Readme included)
-│
-├── notebooks/                 # Experiment Notebooks
-│   ├── 1_Hybrid_Beta_VAE_HBLM.ipynb      # Main Experiment (Bangla vs English)
-│   └── 2_GTZAN_Benchmark_Clustering.ipynb # Generalization Benchmark
-│
-├── results/                   # Generated Plots & Visualizations
-├── requirements.txt           # Dependencies
-├── Disentangling_Language_and_Genre__Unsupervised_Cross_Cultural_Music_Clustering_via_Hybrid_Beta_VAE.pdf  # Final Scientific Report
-└── README.md                  # This file
-
 ## 💻 Run the Experiments
 The project is divided into two major experiments. You can run them directly in the cloud using the links below.
 
@@ -82,3 +64,22 @@ To run the code on your own machine:
 git clone [https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git](https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git)
 cd Hybrid-Beta-VAE-Music-Clustering
 pip install -r requirements.txt
+
+
+## 📂 Repository Structure
+
+```text
+Hybrid-Beta-VAE-Music-Clustering/
+│
+├── data/                      # Dataset documentation
+│   ├── HBLM-100/              # Custom Dataset (Metadata included, Audio linked)
+│   └── GTZAN/                 # Benchmark Dataset (Readme included)
+│
+├── notebooks/                 # Experiment Notebooks
+│   ├── 1_Hybrid_Beta_VAE_HBLM.ipynb      # Main Experiment (Bangla vs English)
+│   └── 2_GTZAN_Benchmark_Clustering.ipynb # Generalization Benchmark
+│
+├── results/                   # Generated Plots & Visualizations
+├── requirements.txt           # Dependencies
+├── Disentangling_Language_and_Genre__Unsupervised_Cross_Cultural_Music_Clustering_via_Hybrid_Beta_VAE.pdf  # Final Scientific Report
+└── README.md                  # This file
