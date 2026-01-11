@@ -1,9 +1,3 @@
-### **2. `data/GTZAN/README.md`**
-Create or overwrite this file in `data/GTZAN/`. It directs the user to the official Kaggle source.
-
-```markdown
-# GTZAN Genre Collection
-
 ## 📌 Overview
 The GTZAN dataset is a standard benchmark for Music Information Retrieval (MIR), consisting of 1,000 audio tracks each 30 seconds long. It is used in this project to validate the **Generalization** capability of the VAE encoder.
 
@@ -24,7 +18,6 @@ After setup, your folder should look like this:
 
 ```text
 data/GTZAN/
-├── README.md          <-- This file
 └── genres_original/   <-- Downloaded separately
     ├── blues/
     ├── classical/
