@@ -34,13 +34,51 @@ Hybrid-Beta-VAE-Music-Clustering/
 │   ├── 1_Hybrid_Beta_VAE_HBLM.ipynb      # Main Experiment (Bangla vs English)
 │   └── 2_GTZAN_Benchmark_Clustering.ipynb # Generalization Benchmark
 │
-├── src/                       # Modular Implementation
-│   ├── vae.py                 # HybridBetaVAE Class Definition
-│   ├── dataset.py             # Audio/Text Preprocessing logic
-│   ├── clustering.py          # K-Means & Visualization utilities
-│   └── evaluation.py          # Metrics (ARI, NMI, Silhouette)
-│
 ├── results/                   # Generated Plots & Visualizations
 ├── requirements.txt           # Dependencies
-├── Neural_Network_Report.pdf  # Final Scientific Report
+├── Disentangling_Language_and_Genre__Unsupervised_Cross_Cultural_Music_Clustering_via_Hybrid_Beta_VAE.pdf  # Final Scientific Report
 └── README.md                  # This file
+
+## 💻 Run the Experiments
+The project is divided into two major experiments. You can run them directly in the cloud using the links below.
+
+### **1. Main Experiment: Cross-Cultural Clustering (HBLM-100)**
+Disentangling language from genre using the Fusion Encoder on the custom dataset.
+<br>
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WMch9Rr9Okq06HAz6Lit-hyAlC35vQ5O?usp=sharing)
+
+### **2. Benchmark Experiment: Genre Classification (GTZAN)**
+Validating the audio encoder on standard genre classification tasks using Kaggle GPUs.
+<br>
+[![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/rummanahmedprodhan/2-gtzan-benchmark-clustering)
+
+<br>
+
+## 📊 Results Summary
+
+| Dataset | Method | ARI | NMI | Silhouette | Purity | CH Index |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **HBLM-100** | **Hybrid Beta-VAE** | **1.00** | **1.00** | **0.21** | **1.00** | **238.6** |
+| HBLM-100 | Baseline PCA | 0.00 | 0.00 | 0.24 | 0.51 | 303.8 |
+| **GTZAN** | **Conv-VAE** | **0.19** | **0.32** | **0.08** | **0.41** | **45.6** |
+| GTZAN | Baseline PCA | 0.04 | 0.06 | -0.02 | 0.18 | 28.5 |
+
+> **Note:** While PCA achieves higher Silhouette scores on HBLM due to dense acoustic clustering, it fails to capture the semantic (language) structure, resulting in ARI ≈ 0.
+
+<br>
+
+## 📥 Dataset Setup
+Due to GitHub storage limits, raw audio files are not included. If running locally, please download them:
+
+1.  **HBLM-100 (Custom):** [Download from Google Drive](https://drive.google.com/file/d/1YWjhcl6BYRUfViDYS_EltGRrTz6AxdyS/view?usp=sharing) and extract to `data/HBLM-100/audio/`.
+2.  **GTZAN (Benchmark):** [Download from Kaggle](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) and extract to `data/GTZAN/`.
+
+<br>
+
+## 🛠️ Installation (Local)
+To run the code on your own machine:
+
+```bash
+git clone [https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git](https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git)
+cd Hybrid-Beta-VAE-Music-Clustering
+pip install -r requirements.txt
