@@ -1,4 +1,4 @@
-Markdown# Disentangled Multi-Modal Music Clustering using Hybrid Beta-VAE
+# Disentangled Multi-Modal Music Clustering using Hybrid Beta-VAE
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WMch9Rr9Okq06HAz6Lit-hyAlC35vQ5O?usp=sharing)
 [![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/rummanahmedprodhan/2-gtzan-benchmark-clustering)
@@ -44,7 +44,3 @@ Hybrid-Beta-VAE-Music-Clustering/
 ├── requirements.txt           # Dependencies
 ├── Neural_Network_Report.pdf  # Final Scientific Report
 └── README.md                  # This file
-💻 Run the ExperimentsThe project is divided into two major experiments. You can run them directly in the cloud using the links below.1. Main Experiment: Cross-Cultural Clustering (HBLM-100)Disentangling language from genre using the Fusion Encoder on the custom dataset.2. Benchmark Experiment: Genre Classification (GTZAN)Validating the audio encoder on standard genre classification tasks using Kaggle GPUs.📊 Results SummaryDatasetMethodARINMISilhouettePurityCH IndexHBLM-100Hybrid Beta-VAE1.001.000.211.00238.6HBLM-100Baseline PCA0.000.000.240.51303.8GTZANConv-VAE0.190.320.080.4145.6GTZANBaseline PCA0.040.06-0.020.1828.5Note: While PCA achieves higher Silhouette scores on HBLM due to dense acoustic clustering, it fails to capture the semantic (language) structure, resulting in ARI ≈ 0.📥 Dataset SetupDue to GitHub storage limits, raw audio files are not included. If running locally, please download them:HBLM-100 (Custom): Download from Google Drive and extract to data/HBLM-100/audio/.GTZAN (Benchmark): Download from Kaggle and extract to data/GTZAN/.🛠️ Installation (Local)To run the code on your own machine:Bashgit clone [https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git](https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git)
-cd Hybrid-Beta-VAE-Music-Clustering
-pip install -r requirements.txt
-📜 ReferencesHiggins, I., et al. (2017). beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework. ICLR.Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. EMNLP.Tzanetakis, G., & Cook, P. (2002). Musical genre classification of audio signals. IEEE Transactions on Speech and Audio Processing.License: MIT
