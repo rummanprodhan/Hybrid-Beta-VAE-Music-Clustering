@@ -2,6 +2,7 @@
 
 
 
+<<<<<<< HEAD
 \# Disentangled Multi-Modal Music Clustering using Hybrid Beta-VAE
 
 
@@ -92,3 +93,5 @@ pip install -r requirements.txt
 
 📜 ReferencesHiggins, I., et al. (2017). beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework. ICLR.Reimers, N., \& Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. EMNLP.Tzanetakis, G., \& Cook, P. (2002). Musical genre classification of audio signals. IEEE Transactions on Speech and Audio Processing.License: MIT
 
+=======
+>>>>>>> 642e804f7d577b4dc32b116f1ae575a599e7899b
