@@ -1,97 +1,90 @@
-# Hybrid-Beta-VAE-Music-Clustering
+# Disentangled Multi-Modal Music Clustering using Hybrid Beta-VAE
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WMch9Rr9Okq06HAz6Lit-hyAlC35vQ5O?usp=sharing)
+[![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/rummanahmedprodhan/2-gtzan-benchmark-clustering)
+[![Project Report](https://img.shields.io/badge/PDF-Read%20Report-red)](https://drive.google.com/file/d/1xP4n4tslrkjtkb3aqOaloO0rq93gpKdO/view?usp=sharing)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+## 📌 Project Overview
+This repository contains the implementation of a **Hybrid Beta-Variational Autoencoder (Beta-VAE)** for unsupervised music clustering. The project addresses the challenge of cross-cultural music analysis by fusing **Convolutional Spectral Features (Audio)** with **Semantic Lyric Embeddings (Text)**.
 
-<<<<<<< HEAD
-\# Disentangled Multi-Modal Music Clustering using Hybrid Beta-VAE
+By imposing a heavy KL-divergence penalty ($\beta=4.0$), the model successfully disentangles "Language" (from lyrics) and "Genre" (from audio) into orthogonal axes in the latent space.
 
+* **Course:** Neural Networks
+* **Track:** Hard Task (Conditional/Beta-VAE & Multi-modal Clustering)
+* **Author:** Rumman Ahmed Prodhan
 
+## 🚀 Key Features
+* **Multi-Modal Fusion:** Integrates Log-Mel Spectrograms (via CNN) and Sentence-BERT embeddings.
+* **Beta-VAE Architecture:** Uses $\beta=4.0$ to enforce statistical independence in the latent space.
+* **Custom Dataset (HBLM-100):** A curated dataset of 100 Bangla and English tracks for cross-cultural evaluation.
+* **State-of-the-Art Metrics:** Achieved **ARI=1.0** and **NMI=1.0** on language separation tasks.
+* **Benchmarked:** Validated audio encoders against the standard GTZAN genre dataset.
 
-\[!\[Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WMch9Rr9Okq06HAz6Lit-hyAlC35vQ5O?usp=sharing)
+## 💻 Run the Experiments
+The project is divided into two major experiments. You can run them directly in the cloud using the links below.
 
-\[!\[Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/rummanahmedprodhan/2-gtzan-benchmark-clustering)
+### **1. Main Experiment: Cross-Cultural Clustering (HBLM-100)**
+Disentangling language from genre using the Fusion Encoder on the custom dataset.
+<br>
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1WMch9Rr9Okq06HAz6Lit-hyAlC35vQ5O?usp=sharing)
 
-\[!\[Project Report](https://img.shields.io/badge/PDF-Read%20Report-red)](https://drive.google.com/file/d/1xP4n4tslrkjtkb3aqOaloO0rq93gpKdO/view?usp=sharing)
+### **2. Benchmark Experiment: Genre Classification (GTZAN)**
+Validating the audio encoder on standard genre classification tasks using Kaggle GPUs.
+<br>
+[![Open In Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://www.kaggle.com/code/rummanahmedprodhan/2-gtzan-benchmark-clustering)
 
-\[!\[License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<br>
 
+## 📊 Results Summary
 
+| Dataset | Method | ARI | NMI | Silhouette | Purity | CH Index |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| **HBLM-100** | **Hybrid Beta-VAE** | **1.00** | **1.00** | **0.21** | **1.00** | **238.6** |
+| HBLM-100 | Baseline PCA | 0.00 | 0.00 | 0.24 | 0.51 | 303.8 |
+| **GTZAN** | **Conv-VAE** | **0.19** | **0.32** | **0.08** | **0.41** | **45.6** |
+| GTZAN | Baseline PCA | 0.04 | 0.06 | -0.02 | 0.18 | 28.5 |
 
-\## 📌 Project Overview
+> **Note:** While PCA achieves higher Silhouette scores on HBLM due to dense acoustic clustering, it fails to capture the semantic (language) structure, resulting in ARI ≈ 0.
 
-This repository contains the implementation of a \*\*Hybrid Beta-Variational Autoencoder (Beta-VAE)\*\* for unsupervised music clustering. The project addresses the challenge of cross-cultural music analysis by fusing \*\*Convolutional Spectral Features (Audio)\*\* with \*\*Semantic Lyric Embeddings (Text)\*\*.
+<br>
 
+## 📥 Dataset Setup
+Due to GitHub storage limits, raw audio files are not included. If running locally, please download them:
 
+1.  **HBLM-100 (Custom):** [Download from Google Drive](https://drive.google.com/file/d/1YWjhcl6BYRUfViDYS_EltGRrTz6AxdyS/view?usp=sharing) and extract to `data/HBLM-100/audio/`.
+2.  **GTZAN (Benchmark):** [Download from Kaggle](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification) and extract to `data/GTZAN/`.
 
-By imposing a heavy KL-divergence penalty ($\\beta=4.0$), the model successfully disentangles "Language" (from lyrics) and "Genre" (from audio) into orthogonal axes in the latent space.
+<br>
 
+## 🛠️ Installation (Local)
+To run the code on your own machine:
 
+```bash
+git clone [https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git](https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git)
+cd Hybrid-Beta-VAE-Music-Clustering
+pip install -r requirements.txt
+```
 
-\* \*\*Course:\*\* Neural Networks
-
-\* \*\*Track:\*\* Hard Task (Conditional/Beta-VAE \& Multi-modal Clustering)
-
-\* \*\*Author:\*\* Rumman Ahmed Prodhan
-
-
-
-\## 🚀 Key Features
-
-\* \*\*Multi-Modal Fusion:\*\* Integrates Log-Mel Spectrograms (via CNN) and Sentence-BERT embeddings.
-
-\* \*\*Beta-VAE Architecture:\*\* Uses $\\beta=4.0$ to enforce statistical independence in the latent space.
-
-\* \*\*Custom Dataset (HBLM-100):\*\* A curated dataset of 100 Bangla and English tracks for cross-cultural evaluation.
-
-\* \*\*State-of-the-Art Metrics:\*\* Achieved \*\*ARI=1.0\*\* and \*\*NMI=1.0\*\* on language separation tasks.
-
-\* \*\*Benchmarked:\*\* Validated audio encoders against the standard GTZAN genre dataset.
-
-
-
-\## 📂 Repository Structure
-
-
+## 📂 Repository Structure
 
 ```text
-
 Hybrid-Beta-VAE-Music-Clustering/
-
 │
-
 ├── data/                      # Dataset documentation
-
 │   ├── HBLM-100/              # Custom Dataset (Metadata included, Audio linked)
-
 │   └── GTZAN/                 # Benchmark Dataset (Readme included)
-
 │
-
 ├── notebooks/                 # Experiment Notebooks
-
-│   ├── 1\_Hybrid\_Beta\_VAE\_HBLM.ipynb      # Main Experiment (Bangla vs English)
-
-│   └── 2\_GTZAN\_Benchmark\_Clustering.ipynb # Generalization Benchmark
-
+│   ├── 1_Hybrid_Beta_VAE_HBLM.ipynb      # Main Experiment (Bangla vs English)
+│   └── 2_GTZAN_Benchmark_Clustering.ipynb # Generalization Benchmark
 │
-
-├── results/                   # Generated Plots \& Visualizations
-
+├── results/                   # Generated Plots & Visualizations
 ├── requirements.txt           # Dependencies
-
-├── Disentangling\_Language\_and\_Genre\_\_Unsupervised\_Cross\_Cultural\_Music\_Clustering\_via\_Hybrid\_Beta\_VAE.pdf  # Final Scientific Report
-
+├── Disentangling_Language_and_Genre__Unsupervised_Cross_Cultural_Music_Clustering_via_Hybrid_Beta_VAE.pdf  # Final Scientific Report
 └── README.md                  # This file
-
-
-
-💻 Run the ExperimentsThe project is divided into two major experiments. You can run them directly in the cloud using the links below.1. Main Experiment: Cross-Cultural Clustering (HBLM-100)Disentangling language from genre using the Fusion Encoder on the custom dataset.2. Benchmark Experiment: Genre Classification (GTZAN)Validating the audio encoder on standard genre classification tasks using Kaggle GPUs.📊 Results SummaryDatasetMethodARINMISilhouettePurityCH IndexHBLM-100Hybrid Beta-VAE1.001.000.211.00238.6HBLM-100Baseline PCA0.000.000.240.51303.8GTZANConv-VAE0.190.320.080.4145.6GTZANBaseline PCA0.040.06-0.020.1828.5Note: While PCA achieves higher Silhouette scores on HBLM due to dense acoustic clustering, it fails to capture the semantic (language) structure, resulting in ARI ≈ 0.📥 Dataset SetupDue to GitHub storage limits, raw audio files are not included. If running locally, please download them:HBLM-100 (Custom): Download from Google Drive and extract to data/HBLM-100/audio/.GTZAN (Benchmark): Download from Kaggle and extract to data/GTZAN/.🛠️ Installation (Local)To run the code on your own machine:Bashgit clone \[https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git](https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git)
-
-cd Hybrid-Beta-VAE-Music-Clustering
-
-pip install -r requirements.txt
-
-📜 ReferencesHiggins, I., et al. (2017). beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework. ICLR.Reimers, N., \& Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. EMNLP.Tzanetakis, G., \& Cook, P. (2002). Musical genre classification of audio signals. IEEE Transactions on Speech and Audio Processing.License: MIT
-
-=======
->>>>>>> 642e804f7d577b4dc32b116f1ae575a599e7899b
+```
+## 📜 References
+1. Higgins, I., et al. (2017). beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework. ICLR.
+2. Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. EMNLP.
+3. Tzanetakis, G., & Cook, P. (2002). Musical genre classification of audio signals. IEEE Transactions on Speech and Audio Processing.
