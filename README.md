@@ -64,7 +64,7 @@ To run the code on your own machine:
 git clone [https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git](https://github.com/rummanprodhan/Hybrid-Beta-VAE-Music-Clustering.git)
 cd Hybrid-Beta-VAE-Music-Clustering
 pip install -r requirements.txt
-
+```
 
 ## 📂 Repository Structure
 
@@ -83,3 +83,8 @@ Hybrid-Beta-VAE-Music-Clustering/
 ├── requirements.txt           # Dependencies
 ├── Disentangling_Language_and_Genre__Unsupervised_Cross_Cultural_Music_Clustering_via_Hybrid_Beta_VAE.pdf  # Final Scientific Report
 └── README.md                  # This file
+```
+## 📜 References
+1. Higgins, I., et al. (2017). beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework. ICLR.
+2. Reimers, N., & Gurevych, I. (2019). Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks. EMNLP.
+3. Tzanetakis, G., & Cook, P. (2002). Musical genre classification of audio signals. IEEE Transactions on Speech and Audio Processing.
