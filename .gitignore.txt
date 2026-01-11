@@ -1,0 +1,25 @@
+# --- System Files ---
+.DS_Store
+.ipynb_checkpoints/
+__pycache__/
+
+# --- Large Files & Archives ---
+*.zip
+*.tar.gz
+*.rar
+*.wav
+*.mp3
+*.flac
+
+# --- HBLM Dataset Rules ---
+# 1. Ignore the heavy audio folder
+data/HBLM-100/audio/
+
+# 2. BUT force-include the CSV and README (Critical for marks)
+!data/HBLM-100/metadata.csv
+!data/HBLM-100/README.md
+
+# --- GTZAN Dataset Rules ---
+# Ignore everything in GTZAN except the README
+data/GTZAN/*
+!data/GTZAN/README.md
